@@ -1,71 +1,26 @@
-# 📊 Análisis de Fidelización de Clientes  
-Proyecto de Data Analytics – Python | Pandas | Visualización
+# Store 1 — Customer Data Cleaning & Customer Insights (Python)
 
-## 🧠 Descripción del Proyecto
-Este proyecto analiza el comportamiento de los clientes y los factores que influyen en su permanencia o abandono. El objetivo es identificar patrones que permitan mejorar la retención mediante análisis exploratorio de datos, KPIs y modelos sencillos de segmentación.
+## Descripción
+Proyecto de análisis en Python basado en un caso de negocio simulado: **Store 1** almacena información de clientes en una estructura tipo tabla (listas anidadas).  
+El objetivo es **limpiar, estandarizar y consultar datos de clientes**, además de calcular métricas simples (ingresos) y construir funciones reutilizables para filtrar y extraer información.
 
-El análisis fue desarrollado en Jupyter Notebook como parte del programa de formación en análisis de datos.
+## Objetivos
+- Estandarizar nombres de clientes (formato, espacios, guiones bajos y mayúsculas/minúsculas).
+- Convertir tipos de datos (edad a entero).
+- Normalizar categorías de compra (minúsculas).
+- Calcular ingresos totales a partir de listas de gastos.
+- Crear funciones para **consultas filtradas por categoría** y selección de clientes.
 
----
+## Dataset / Estructura de datos
+Los datos se almacenan como una lista de usuarios con el siguiente esquema:
 
-## 🎯 Objetivos del Análisis
+- `user_id` (str)
+- `user_name` (str → luego se transforma a lista: [nombre, apellido])
+- `user_age` (float → luego int)
+- `fav_categories` (list[str])
+- `total_spendings` (list[int])
 
-- Determinar qué variables influyen en la fidelización de los clientes.
-- Identificar patrones relevantes de comportamiento.
-- Calcular métricas clave relacionadas con actividad, consumo y abandono.
-- Generar insights accionables para mejorar la retención.
-
----
-
-## 🧰 Tecnologías Utilizadas
-
-- **Python 3.9+**
-- **Pandas** para manipulación de datos
-- **NumPy** para cálculos numéricos
-- **Matplotlib / Seaborn** para visualizaciones
-- **Jupyter Notebook** para desarrollo interactivo
-
----
-
-## 📁 Estructura del Notebook
-
-1. **Carga y exploración inicial de datos**
-   - Verificación de tipos de datos
-   - Limpieza de nulos
-   - Detección de outliers
-
-2. **Análisis exploratorio (EDA)**
-   - Distribuciones de consumo
-   - Frecuencia de uso
-   - Segmentación preliminar de clientes
-
-3. **Construcción de KPIs**
-   - Tasa de retención
-   - Tasa de abandono
-   - Frecuencia promedio de uso
-   - Ticket promedio (si aplica)
-
-4. **Visualizaciones clave**
-   - Histogramas y boxplots
-   - Matriz de correlación
-   - Comparación entre segmentos de clientes
-
-5. **Conclusiones**
-   - Resumen de hallazgos más importantes
-   - Recomendaciones estratégicas
-
-
-## 📌 Principales Hallazgos (Resumen)
-
-- Existen patrones claros que distinguen clientes fieles vs. en riesgo.
-- El uso frecuente y consistente del servicio es un predictor fuerte de fidelización.
-- Los clientes con baja actividad o disminución reciente en el uso presentan mayor probabilidad de abandono.
-- Se identificaron segmentos específicos que requieren intervención personalizada.
-
-> Para ver los detalles completos, revisa el archivo `Analisis_fidelización_clientes.ipynb`.
-## ▶️ Cómo ejecutar el proyecto
-
-1. Clonar este repositorio:
-
-```bash
+Ejemplo:
+```python
+['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]]
 git clone https://github.com/tuusuario/tu-repositorio.git
